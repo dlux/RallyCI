@@ -1,0 +1,4 @@
+---
+    image_name: "^cirros.*uec$"
+    flavor_name: "m1.nano"
+    concurrency: 5
