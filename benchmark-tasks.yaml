@@ -15,7 +15,10 @@
         type: "constant"
         times: {{i}}
         concurrency: {{concurrency}}
-      context: {}
+      context:
+        users:
+          users_per_tenant: 2
+          tenants: 2
   {% endfor %}
 
   NovaServers.boot_and_delete_multiple_servers:
@@ -31,5 +34,8 @@
         type: "constant"
         times: {{i}}
         concurrency: {{concurrency}}
-      context: {}
+      context:
+        users:
+          users_per_tenant: 2
+          tenants: 2
   {% endfor %}
