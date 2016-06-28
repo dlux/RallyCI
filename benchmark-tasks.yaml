@@ -1,6 +1,6 @@
 {% set flavor_name = flavor_name or "m1.nano" %}
 {% set image_name = image_name or "^cirros.*uec$" %}
-{% set concurrency = concurrency or 2 %}
+{% set concurrency = concurrency or 1 %}
 ---
   NovaServers.boot_and_delete_server:
   {% for i in range(1, 11, 9) %}
@@ -17,8 +17,8 @@
         concurrency: {{concurrency}}
       context:
         users:
-          users_per_tenant: 2
-          tenants: 2
+          users_per_tenant: 1
+          tenants: 1
   {% endfor %}
 
   NovaServers.boot_and_delete_multiple_servers:
@@ -36,6 +36,6 @@
         concurrency: {{concurrency}}
       context:
         users:
-          users_per_tenant: 2
-          tenants: 2
+          users_per_tenant: 1
+          tenants: 1
   {% endfor %}
